@@ -1,0 +1,66 @@
+{
+    "attachments": [],
+    "badges": {
+        "attachments": 0,
+        "attachmentsByType": {
+            "trello": {
+                "board": 0,
+                "card": 0
+            }
+        },
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "checkItemsEarliestDue": null,
+        "comments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false,
+        "fogbugz": "",
+        "location": false,
+        "start": null,
+        "subscribed": false,
+        "viewingMemberVoted": false,
+        "votes": 0
+    },
+    "cardRole": null,
+    "checkItemStates": [],
+    "closed": false,
+    "cover": {
+        "brightness": "dark",
+        "color": null,
+        "idAttachment": null,
+        "idPlugin": null,
+        "idUploadedBackground": null,
+        "size": "normal"
+    },
+    "dateLastActivity": "2021-09-11T14:54:29.524Z",
+    "desc": "",
+    "descData": {
+        "emoji": {}
+    },
+    "due": null,
+    "dueComplete": false,
+    "dueReminder": null,
+    "email": null,
+    "id": "613cc3253d6dc43bb915af34",
+    "idAttachmentCover": null,
+    "idBoard": "5f329c5cb0d3b0026c644b10",
+    "idChecklists": [],
+    "idLabels": [],
+    "idList": "5f329cbc131beb79fc75c28e",
+    "idMembers": [],
+    "idMembersVoted": [],
+    "idShort": 690,
+    "isTemplate": false,
+    "labels": [],
+    "limits": {},
+    "manualCoverAttachment": false,
+    "name": "test add",
+    "pos": 114687.5,
+    "shortLink": "p3AM8ran",
+    "shortUrl": "https://trello.com/c/p3AM8ran",
+    "start": null,
+    "stickers": [],
+    "subscribed": false,
+    "url": "https://trello.com/c/p3AM8ran/690-test-add"
+}
