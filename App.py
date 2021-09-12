@@ -32,16 +32,10 @@ def init():
 def callback():
   # get X-Line-Signature header value
   signature = request.headers['X-Line-Signature']
-
   # get request body as text
   body = request.get_data(as_text=True)
   app.logger.info("Request body: " + body)
-
-  # ReqContent = request.get_json()
-  # ReqText = ReqContent['events'][0]['message']['text']
-  # handle webhook body
   try:
-    print("api呼び出し")
     handler.handle(body, signature)
   except InvalidSignatureError:
     abort(400)
@@ -51,9 +45,9 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
   if createCard(event.message.text):
-    ReplyText = "カードを作成しました。"
+    ReplyText = 'Success Created Card "' + event.message.text + '"'
   else:
-    ReplyText = "カード作成に失敗しました。"
+    ReplyText = 'Failed Create Card "' + event.message.text + '"'
   line_bot_api.reply_message(
     event.reply_token,
     TextSendMessage(text=ReplyText))
