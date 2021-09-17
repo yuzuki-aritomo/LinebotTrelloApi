@@ -1,17 +1,17 @@
 import requests
+from config import TrelloApiConfig
 
-url = "https://api.trello.com/1/cards"
 headers = {
   "Accept": "application/json"
 }
 query = {
-  'key': '4a622c5834edd8afcb884ffd870cbcd8',
-  'token': 'bd4be36f22d5220491c82668dff1b3084e6e3a87495566841c536bc29e85b4a3',
+  'key': TrelloApiConfig.KEY,
+  'token': TrelloApiConfig.TOKEN,
 }
 
 #create new card
 def createCard(ReqText):
-  print(ReqText)
+  url = "https://api.trello.com/1/cards"
   try:
     ReqText = ReqText + '\n'
     name, desc = ReqText.split('\n', 1)

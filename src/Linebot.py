@@ -14,12 +14,10 @@ from src.TrelloApi import createCard
 from flask import Blueprint
 app = Blueprint("LinebotApp", __name__, url_prefix="/linebot")
 
-YOUR_CHANNEL_ACCESS_TOKEN = 'BgL5Q+YnHFN+VtkGDYKrTSYyoDpkUVcPmUlG6bWCYmnESi4lgNYnHjTd2qzeOqrpsjJOKi8QZaSQa/LQcf4Cxd8wcQua8LOEr6fojr8ceIm3Y6naGj3331BnbpFmQwGsooT7xiHfNWVovEVJEkDRBgdB04t89/1O/w1cDnyilFU='
-YOUR_CHANNEL_SECRET = '5521bb2a895206ab596a0334730d12a6'
+from config import LinebotConfig
 
-#環境変数取得
-# YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
-# YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
+YOUR_CHANNEL_ACCESS_TOKEN = LinebotConfig.YOUR_CHANNEL_ACCESS_TOKEN
+YOUR_CHANNEL_SECRET = LinebotConfig.YOUR_CHANNEL_SECRET
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
