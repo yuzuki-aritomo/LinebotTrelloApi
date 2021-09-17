@@ -9,6 +9,7 @@ query = {
   'token': 'bd4be36f22d5220491c82668dff1b3084e6e3a87495566841c536bc29e85b4a3',
 }
 
+#create new card
 def createCard(ReqText):
   print(ReqText)
   try:
@@ -26,6 +27,6 @@ def createCard(ReqText):
     )
     return True
   except Exception as e:
-    with open('log.json', mode='wt', encoding='utf-8') as file:
+    with open('log/log.json', mode='wt', encoding='utf-8') as file:
       file.write(str(e))
     return False
