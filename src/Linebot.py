@@ -21,9 +21,7 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
 @app.route("/callback", methods=['POST'])
 def callback():
-  # get X-Line-Signature header value
   signature = request.headers['X-Line-Signature']
-  # get request body as text
   body = request.get_data(as_text=True)
   try:
     handler.handle(body, signature)
@@ -38,16 +36,8 @@ def handle_message(event):
     ReplyText = '"' + event.message.text + '" Card Created'
   else:
     ReplyText = 'Failed Create Card "' + event.message.text + '"'
-  # ReplyText += '\n' + getCards()
-  # line_bot_api.reply_message(
-  #   event.reply_token,
-  #   TextSendMessage(text=ReplyText))
   Cardlist = getCards()
   line_bot_api.reply_message(
     event.reply_token,
     [TextSendMessage(text=ReplyText),TextSendMessage(text=Cardlist)]
   )
-
-@app.route("/test", methods=["GET"])
-def test():
-  return "health"

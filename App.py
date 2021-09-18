@@ -1,6 +1,5 @@
 from flask import Flask
 import os
-from src.TrelloApi import getCards
 
 app = Flask(__name__)
 
@@ -9,7 +8,6 @@ app.register_blueprint(Linebot.app)
 
 @app.route("/", methods=['GET'])
 def init():
-  print("hello world")
   return "hello world"
 
 if __name__ == "__main__":
