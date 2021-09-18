@@ -33,16 +33,19 @@ def createCard(ReqText):
 
 #get cards from board
 def getCards():
-  board_id = '5f329cbc131beb79fc75c28e'
-  url = "https://api.trello.com/1/lists/"+ board_id +"/cards"
-  response = requests.request(
-    "GET",
-    url,
-    headers=headers,
-    params=query,
+  try:
+    board_id = '5f329cbc131beb79fc75c28e'
+    url = "https://api.trello.com/1/lists/"+ board_id +"/cards"
+    response = requests.request(
+      "GET",
+      url,
+      headers=headers,
+      params=query,
     )
-  print(response)
-  print(response.text)
-  re = json.loads(response.text)
-  ans = re[0]['name'] + re[1]['name']
-  return ans
+    re = json.loads(response.text)
+    ResText = "Card List\n"
+    for item in re:
+      ResText += '・'+item['name']+'\n'
+    return ResText
+  except Exception as e:
+    return str(e)
