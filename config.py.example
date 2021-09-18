@@ -1,0 +1,7 @@
+class LinebotConfig:
+  YOUR_CHANNEL_ACCESS_TOKEN = ''
+  YOUR_CHANNEL_SECRET = ''
+
+class TrelloApiConfig:
+  KEY = ''
+  TOKEN = ''
